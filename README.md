@@ -33,4 +33,18 @@ docker run -p 5000:5000 catalogo-aplicacoes
 Através do botão "Atualizar Catálogo" na interface, o backend acessa o Azure DevOps e atualiza os dados.
 
 ## Deploy no OKE
-Veja manifesto `k8s-deploy.yaml` para deploy em Oracle Kubernetes Engine (OKE).
+Veja manifesto `K8S/k8s-deploy.yaml` para deploy em Oracle Kubernetes Engine (OKE).
+
+### Criar Secret para PAT:
+
+```
+kubectl create secret generic azure-pat --from-literal=pat='<SEU_PAT_AQUI>'
+```
+
+### Subir para o OKE:
+
+```
+kubectl apply -f K8S/k8s-deploy.yaml
+```
+
+

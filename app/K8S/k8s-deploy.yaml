@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalogo-aplicacoes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalogo-aplicacoes
+  template:
+    metadata:
+      labels:
+        app: catalogo-aplicacoes
+    spec:
+      containers:
+      - name: flask-catalogo
+        image: <sua-imagem-no-registry>
+        ports:
+        - containerPort: 5000
+        env:
+        - name: PAT
+          valueFrom:
+            secretKeyRef:
+              name: azure-pat
+              key: pat
