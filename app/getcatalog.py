@@ -6,7 +6,7 @@ import html
 
 # === CONFIGURAÇÕES ===
 ORGANIZATION = "TI-Desenvolvimento"
-PAT = "FCSZaifCeD9b6cGjWXEUlN4SPU0WEm5xIpfQ0fZeMJkHTacFFFpKJQQJ99BEACAAAAAsgxOaAAASAZDO3fFG"
+PAT = "<SEU_PAT_AQUI>"
 API_VERSION = "7.0"
 BASE_URL = f"https://dev.azure.com/{ORGANIZATION}"
 auth = HTTPBasicAuth('', PAT)

@@ -9,7 +9,7 @@ Este projeto Flask gera e exibe um catálogo visual de aplicações com base nos
 
 ## Instalação local
 ```bash
-git clone https://github.com/seuusuario/catalogo-aplicacoes.git
+git clone https://github.com/claudecirmiranda/catalogo-aplicacoes.git
 cd catalogo-aplicacoes
 python -m venv venv
 source venv/bin/activate  # ou venv\Scripts\activate no Windows
