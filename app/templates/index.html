@@ -58,21 +58,28 @@
     });
   }
 
-    $(document).ready(function () {
-      carregarTree();
+  $(document).ready(function () {
+    carregarTree();
 
-      $('#btnAtualizar').click(function() {
-        $('#loading').show(); // mostra o loading
-        $.post('/atualizar', function(res) {
-          if (res.status === 'ok') {
-            // recarregar o tree
-            $('#jstree').jstree('destroy');
-            $('#jstree').jstree({ 'core': { 'data': 'static/tree_data.json' } });
-          }
-          $('#loading').hide(); // esconde o loading
-        });
+    $('#btnAtualizar').click(function() {
+      $('#loading').show(); // mostra o loading
+      $.post('/atualizar', function(res) {
+        if (res.status === 'ok') {
+          $('#jstree').jstree('destroy');
+          $('#jstree').jstree({
+            'core': {
+              'data': {
+                'url': 'static/tree_data.json?t=' + new Date().getTime(),
+                'dataType': 'json'
+              }
+            }
+          });
+        }
+        $('#loading').hide(); // esconde o loading
       });
     });
+  });
+
   </script>
 </body>
 </html>

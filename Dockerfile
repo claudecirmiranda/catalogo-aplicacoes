@@ -11,4 +11,4 @@ WORKDIR /app
 ENV FLASK_APP=web.py
 EXPOSE 5000
 
-CMD ["python", "web.py"]
+CMD ["python", "app/web.py"]

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 import json
+import os
 from getcatalog import get_pipelines, get_pom_data, get_projects 
 
 app = Flask(__name__)
@@ -86,10 +87,14 @@ def gerar_tree_data():
         if project_node["children"]:
             tree_data.append(project_node)
 
-    # Salvar em arquivo
-    with open("static/tree_data.json", "w", encoding="utf-8") as f:
-        json.dump(tree_data, f, indent=2, ensure_ascii=False)
+    static_dir = os.path.join(os.path.dirname(__file__), "static")
+    os.makedirs(static_dir, exist_ok=True)
+    tree_data_path = os.path.join(static_dir, "tree_data.json")
 
+    # Salvar em arquivo
+    with open(tree_data_path, "w", encoding="utf-8") as f:
+        json.dump(tree_data, f, indent=2, ensure_ascii=False)
+    
 @app.route('/')
 def index():
     # Apenas exibe a página
@@ -105,4 +110,4 @@ def atualizar():
 # Se desejar, na inicialização, gerar o JSON uma primeira vez
 if __name__ == '__main__':
     gerar_tree_data()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
