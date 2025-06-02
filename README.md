@@ -63,8 +63,6 @@ kubectl apply -f K8S/service.yaml
 ```
 
 **Nota**: Certifique-se de que seu cluster tenha acesso à internet e permissões para pull da imagem.
-<<<<<<< HEAD
-=======
 
 ## 📁 Estrutura do Projeto
 ```
@@ -160,33 +158,4 @@ Com pequenas melhorias, podemos ampliar para outras linguagens ou ferramentas de
 
 ## 📄 Licença
 Projeto privado / interno. Para uso sob autorização.
->>>>>>> 285f2a5dc465b9bf64951d985a78634ff87cf18f
 
-## 📁 Estrutura do Projeto
-```
-bash
-
-CATALOGO-APLICACOES
-│   .gitignore
-│   Dockerfile
-│   README.md
-│   requirements.txt
-│
-├───app
-│   │   getcatalog.py    # Consulta APIs do Azure DevOps e extrai dados do POM
-│   │   web.py           # Aplicação Flask principal
-│   │   __init__.py
-│
-├───static
-│   │   tree_data.json   # JSON gerado para alimentar a árvore
-│
-└───templates
-│   │   index.html       # Frontend com jsTree + Bootstrap
-│
-└───K8S
-    │   k8s-deploy.yaml  # Deployment + volume + secret
-    │   service.yaml     # Service NodePort para expor a aplicação
-```
-
-## 📄 Licença
-Projeto privado / interno. Para uso sob autorização.
