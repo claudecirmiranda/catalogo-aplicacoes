@@ -75,19 +75,22 @@ CATALOGO-APLICACOES
 │   requirements.txt
 │
 ├───app
-│   │   getcatalog.py    # Consulta APIs do Azure DevOps e extrai dados do POM
-│   │   web.py           # Aplicação Flask principal
+│   │   getcatalog.py        # Consulta APIs do Azure DevOps e extrai dados do POM
+│   │   web.py               # Aplicação Flask principal
 │   │   __init__.py
+│   │
+│   ├───static
+│   │       tree_data.json   # JSON gerado para alimentar a árvore
+│   │
+│   ├───templates
+│   │       index.html       # Frontend com jsTree + Bootstrap
+│   │
+│   └───__pycache__
+│           getcatalog.cpython-310.pyc
 │
-├───static
-│   │   tree_data.json   # JSON gerado para alimentar a árvore
-│
-└───templates
-│   │   index.html       # Frontend com jsTree + Bootstrap
-│
-└───K8S
-    │   k8s-deploy.yaml  # Deployment + volume + secret
-    │   service.yaml     # Service NodePort para expor a aplicação
+├───K8S
+│       k8s-deploy.yaml  # Deployment + volume + secret
+│       service.yaml     # Service NodePort para expor a aplicação
 ```
 
 ------
