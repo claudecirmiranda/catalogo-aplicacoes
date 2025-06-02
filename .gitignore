@@ -3,3 +3,4 @@ __pycache__/
 .env
 *.log
 app/static/tree_data.json
+venv
